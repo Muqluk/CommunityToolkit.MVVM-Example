@@ -2,23 +2,12 @@
 using System.Linq;
 
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
-using CommunityToolkit.Mvvm.ComponentModel;
+using Microsoft.Extensions.DependencyInjection;
 using CommunityToolkit.Mvvm.DependencyInjection;
 
 
-
-// https://github.com/gosukretess/WPF.Core
-namespace MC.UI.Main {
-  internal class InjectionService : IInjectionService {
-    public string InjectionServiceElement => "Example text from injected service";
-  }
-
-  internal interface IInjectionService {
-    public string InjectionServiceElement { get; }
-  }
-
+namespace MC.Wpf.Core {
   public class ServiceCollectionBuilder {
     private readonly IServiceCollection _serviceCollection;
 
@@ -28,6 +17,7 @@ namespace MC.UI.Main {
 
     public ServiceCollectionBuilder AddMainWindow<T>() where T : class {
       _serviceCollection.AddTransient<T>();
+
       return this;
     }
 
@@ -38,8 +28,8 @@ namespace MC.UI.Main {
 
     public ServiceCollectionBuilder AddViewModels() {
       var viewModels = AppDomain.CurrentDomain.GetAssemblies()
-          .SelectMany(assembly => assembly.GetTypes())
-          .Where(type => type.IsSubclassOf(typeof(ViewModel)));
+        .SelectMany(assembly => assembly.GetTypes())
+        .Where(type => type.IsSubclassOf(typeof(ViewModel)));
 
       foreach (var viewModel in viewModels) {
         _serviceCollection.AddTransient(viewModel);
@@ -50,8 +40,8 @@ namespace MC.UI.Main {
 
     public ServiceCollectionBuilder AddConfiguration(string fileName = "appsettings.json") {
       var builder = new ConfigurationBuilder()
-          .SetBasePath(AppContext.BaseDirectory)
-          .AddJsonFile(fileName, false, true);
+        .SetBasePath(AppContext.BaseDirectory)
+        .AddJsonFile(fileName, false, true);
       var configuration = builder.Build() as IConfiguration;
       _serviceCollection.AddSingleton(configuration);
 
@@ -61,9 +51,8 @@ namespace MC.UI.Main {
     public IServiceProvider Build() {
       var serviceProvider = _serviceCollection.BuildServiceProvider();
       Ioc.Default.ConfigureServices(serviceProvider);
+
       return serviceProvider;
     }
   }
-
-  public class ViewModel : ObservableObject { }
 }
