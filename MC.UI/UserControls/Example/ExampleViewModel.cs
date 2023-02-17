@@ -1,17 +1,18 @@
 ﻿using Microsoft.Extensions.Configuration;
 
 using MC.UI.Services;
-using MC.Wpf.Core;
+using MC.UI.Core;
 
 namespace MC.UI.UserControls {
 
   internal class ExampleViewModel : ViewModel {
-    public string ExampleText { get; set; }
-    public string? ConfigurationText { get; set; } = "";
+    public string ViewModelText = "from ViewModel Constant";
+    public string ExampleText { get; set; } = "Injexted ExampleText";
+    public string? ConfigurationText { get; set; } = "ConfigurationText";
 
     public ExampleViewModel(IInjectionService injectionService, IConfiguration configuration) {
       ExampleText = injectionService.InjectionServiceElement;
-      ConfigurationText = configuration.GetValue<string>("ConfigEntry");
+      ConfigurationText = configuration.GetValue<string>("example_appsettings_content_key");
     }
   }
 }

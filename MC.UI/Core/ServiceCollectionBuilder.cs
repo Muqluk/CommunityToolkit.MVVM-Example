@@ -2,12 +2,12 @@
 using System.Linq;
 
 using Microsoft.Extensions.Configuration;
-
 using Microsoft.Extensions.DependencyInjection;
+
 using CommunityToolkit.Mvvm.DependencyInjection;
 
 
-namespace MC.Wpf.Core {
+namespace MC.UI.Core {
   public class ServiceCollectionBuilder {
     private readonly IServiceCollection _serviceCollection;
 

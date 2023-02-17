@@ -1,5 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace MC.Wpf.Core {
+namespace MC.UI.Core {
   public class ViewModel : ObservableObject { }
 }

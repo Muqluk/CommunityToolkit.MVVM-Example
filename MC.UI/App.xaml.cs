@@ -3,7 +3,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using CommunityToolkit.Mvvm.DependencyInjection;
 
-using MC.Wpf.Core;
+using MC.UI.Core;
 using MC.UI.Views;
 using MC.UI.Services;
 
