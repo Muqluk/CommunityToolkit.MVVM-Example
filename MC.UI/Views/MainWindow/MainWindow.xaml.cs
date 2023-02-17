@@ -2,7 +2,7 @@
 
 using CommunityToolkit.Mvvm.DependencyInjection;
 
-using MC.Wpf.Core;
+using MC.UI.Core;
 
 namespace MC.UI.Views {
   public partial class MainWindow : Window {
