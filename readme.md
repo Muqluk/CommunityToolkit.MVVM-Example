@@ -6,11 +6,11 @@
     <details>
         <summary>Package List</summary>
 
-    `CommunityToolkit.Mvvm.DependencyInjection`
-    `Microsoft.Extensions.Configuration.Binder`
-    `Microsoft.Extensions.Configuration.FileExtensions`
-    `Microsoft.Extensions.Configuration.Json`
-    `Microsoft.Extensions.DependencyInjection`
+    `CommunityToolkit.Mvvm`<br />
+    `Microsoft.Extensions.Configuration.Binder`<br />
+    `Microsoft.Extensions.Configuration.FileExtensions`<br />
+    `Microsoft.Extensions.Configuration.Json`<br />
+    `Microsoft.Extensions.DependencyInjection`<br />
     </details>
 
 1. <u>Build the ServiceCollectionBuilder class</u>
