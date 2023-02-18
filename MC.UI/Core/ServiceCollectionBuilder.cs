@@ -29,7 +29,7 @@ namespace MC.UI.Core {
     public ServiceCollectionBuilder AddViewModels() {
       var viewModels = AppDomain.CurrentDomain.GetAssemblies()
         .SelectMany(assembly => assembly.GetTypes())
-        .Where(type => type.IsSubclassOf(typeof(ViewModel)));
+        .Where(type => type.IsSubclassOf(typeof(ViewModelBase)));
 
       foreach (var viewModel in viewModels) {
         _serviceCollection.AddTransient(viewModel);

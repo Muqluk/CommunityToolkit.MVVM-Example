@@ -5,7 +5,7 @@ using MC.UI.Core;
 
 namespace MC.UI.UserControls {
 
-  internal class ExampleViewModel : ViewModel {
+  internal class ExampleViewModel : ViewModelBase {
     public string ViewModelText = "from ViewModel Constant";
     public string ExampleText { get; set; } = "Injexted ExampleText";
     public string? ConfigurationText { get; set; } = "ConfigurationText";
