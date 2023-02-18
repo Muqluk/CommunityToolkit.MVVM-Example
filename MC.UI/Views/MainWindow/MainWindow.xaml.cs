@@ -1,5 +1,4 @@
 ﻿using System.Windows;
-
 using CommunityToolkit.Mvvm.DependencyInjection;
 
 using MC.UI.Core;
